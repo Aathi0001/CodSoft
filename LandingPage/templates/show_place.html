@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ place.des[:150] }}">
+    <title>TECH - {{ place.name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <div class="home_social">
+      <a href="#" class="home_social-icon" data-aos="fade-down" data-aos-delay="200">
+        <img src="{{ url_for('static', filename='assets/Img/facebook.png') }}" alt="Facebook">
+      </a>
+      <a href="#" class="home_social-icon" data-aos="fade-down" data-aos-delay="250">
+        <img src="{{ url_for('static', filename='assets/Img/instagram.png') }}" alt="Instagram">
+      </a>
+      <a href="#" class="home_social-icon" data-aos="fade-down" data-aos-delay="300">
+        <img src="{{ url_for('static', filename='assets/Img/twitter.png') }}" alt="Twitter">
+      </a>
+      <a href="#" class="home_social-icon" data-aos="fade-down" data-aos-delay="350">
+        <img src="{{ url_for('static', filename='assets/Img/github.png') }}" alt="GitHub">
+      </a>
+    </div>  
+
+    <div class="content">
+      <h1 id="title">{{ place.name }}</h1>
+      <div class="main-content-container">
+        <img class="img" src="{{ url_for('get_image', image_id=place.id) }}" alt="{{ place.name }}">
+        <p>{{ place.des }}</p>
+      </div>
+    </div>
+
+    <div class="comment-container">
+      <h2>Comments</h2>
+      <div class="container">
+        <form method="POST">
+          <input id="commentInput" name="comment_text" type="text" placeholder="Add a comment..." aria-label="Comment input">
+          <button class="material-symbols-outlined send" type="submit" aria-label="Add comment">Add</button>
+        </form>
+      </div>
+      <button id="toggleComments" class="toggle-comments">Show Comments</button>
+      <div id="comments" class="comments hidden">
+        <ul>
+          {% for comment in comments %}
+            <li>{{ comment }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById('toggleComments').addEventListener('click', function() {
+        const commentsSection = document.getElementById('comments');
+        
+        if (commentsSection.style.display === 'none' || commentsSection.style.display === '') {
+          commentsSection.style.display = 'block';
+          this.textContent = 'Hide Comments';
+        } else {
+          commentsSection.style.display = 'none';
+          this.textContent = 'Show Comments';
+        }
+      });
+    </script>
+  </body>
+</html>

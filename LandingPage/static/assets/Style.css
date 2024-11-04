@@ -1,0 +1,608 @@
+@import url('https://fonts.googleapis.com/css2?family=Tinos&display=swap');
+
+
+:root {
+    --header-height: 3rem;
+    --font-semi: 600;
+}
+
+
+:root {
+    --first-color: #12372A;
+    --second-color: #4D6530;
+    --third-color: #6E4829;
+    --gardient-color: linear-gradient(to right, #2e1114, #501b1d);
+}
+
+
+:root {
+    --body-font: 'Tinos', serif;
+    --big-font-size: 2rem;
+    --h2-font-size: 1.5rem;
+    --nomral-font-size: 0.938rem;
+}
+
+
+@media screen and (min-width: 768px) {
+
+    :root {
+        --big-font-size: 3.5rem;
+        --h2-font-size: 2rem;
+        --nomral-font-size: 1rem;
+    }
+}
+
+
+:root {
+    --mb-1: 0.5rem;
+    --mb-2: 1rem;
+    --mb-3: 1.5rem;
+    --mb-4: 2rem;
+    --mb-5: 2.5rem;
+    --mb-6: 3rem;
+}
+
+
+:root {
+    --z-back: -10;
+    --z-normal: 1;
+    --z-tooltip: 10;
+    --z-fixed: 100;
+}
+
+
+*,::before,::before {
+    box-sizing: border-box;
+}
+    
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    margin: var(--header-height) 0 0 0;
+    font-family: var(--body-font);
+    font-size: var(--nomral-font-size);
+    color: var(--second-color);
+}
+
+
+h1,h2,h3,h4,h5,h6,p {
+    margin: 0;
+}
+
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+    
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+.bd_grid {
+    max-width: 1024px;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-column-gap: 2rem;
+    width: calc(100% - 2rem);
+    margin-left: var(--mb-2);
+    margin-right: var(--mb-2);
+}
+
+.header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: var(--z-fixed);
+    background: #fff;
+    box-shadow: 0 1px 4px rgba(146, 161, 176, 0.15);
+}
+
+.nav {
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: var(--font-semi);
+}
+
+@media screen and (max-width: 768px) {
+    .menu {
+        position: fixed;
+        top: var(--header-height);
+        right: -100%;
+        width: 50%;
+        height: 100%;
+        padding: 2rem;
+        background-color: var(--second-color);
+        transition: 0.5s;
+    }   
+    .place {
+        width: 100%;
+    }
+    .carousel {
+        height: inherit;
+    }
+    .carousel-slide img {
+        height: calc(100vh - 3rem);
+        object-fit: cover;
+    }
+}
+
+.item {
+    margin-bottom: var(--mb-4);
+}
+
+.link {
+    position: relative;
+    color: #fff;
+}
+
+.link:hover {
+    position: relative;
+}
+
+.link:hover::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 0.18rem;
+    left: 0;
+    top: 2rem;
+    background-color: var(--first-color);
+}
+
+.logo {
+    position:static;
+    left:0;
+    top:0;
+    width:100%;
+}
+
+.toggle {
+    color: var(--second-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.active::after {
+    position: absolute;
+    content: " ";
+    width: 100%;
+    height: 0.18rem;
+    left: 0;
+    top: 2rem;
+    background-color: var(--first-color);
+}
+.show {
+    right: 0;
+}
+
+.home {
+    position: relative;
+    height: calc(100vh - 3rem);
+    row-gap: 1rem;
+}
+
+.carousel {
+    width: 100%;
+    height: calc(100vh - 3rem);
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .carousel-slide {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .carousel-slide img {
+    width: 100%;
+    height: calc(100vh - 3rem);
+  }
+  
+  /* Optional: Add animation for sliding effect */
+  @keyframes slide {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+.home_data {
+    align-self: center;
+    position: absolute; /* Position the home data absolutely */
+    top: 0; /* Position at the top */
+    left: 0; /* Align with the left edge */
+    width: 100%; /* Take up full width */
+    z-index: 1; /* Ensure it's above the carousel */
+}
+
+.home_title {
+    font-size: var(--big-font-size);
+    margin: var(--mb-5) 5px 0; 
+}
+
+.home_title_color {
+    color: var(--first-color);
+    font-size: var(--h2-font-size);
+}
+
+/*.home_social {
+    display: flex;
+    flex-direction: row;
+}
+
+.home_social-icon {
+    width: max-content;
+    margin-bottom: var(--mb-2);
+    font-size: 1.5rem;
+    color: var(--second-color);
+    margin-left: 5px;
+}
+
+.home_social-icon:hover {
+    color: var(--first-color);
+}*/
+
+.button {
+    display: inline-block;
+    color: #fff;
+    width: 150px;
+    height: 50px;
+    padding: 0.75rem 2.5rem; 
+    text-align: center;
+    margin-left: 10px;
+    font-weight: var(--font-semi);
+    border-radius: 0.5rem;
+    background: var(--gardient-color);
+}
+   
+.button:hover {
+    box-shadow: 0 10px 36px rgba(0, 0, 0, 0.15);
+}
+
+
+.section {
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+}
+
+.section-title {
+    position: relative;
+    font-size: var(--h2-font-size);
+    color: var(--first-color);
+    margin-top: var(--mb-2);
+    margin-bottom: var(--mb-4);
+    text-align: center;
+}
+
+.section-title::after {
+    position: absolute;
+    content: "";
+    width: 64px;
+    height: 0.18rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 2rem;
+    background-color: var(--first-color);
+}
+.work {
+    text-align: center;
+}
+
+
+.work_container {
+    row-gap: 2rem;
+    column-gap: 2rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 var(--mb-2);
+    
+}
+.places {
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.place{
+    width: 50%;
+    padding: 0 20px 20px;
+    text-align: center;
+    box-sizing: border-box;
+    min-width: 250px;
+
+}
+
+
+.place img {
+    display: block; 
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+    transition: 1s;
+    cursor: pointer;
+}
+
+.place img:hover {
+    transform: scale(1.1);
+}
+.place h1 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.place p {
+    font-size: 0.9rem;
+    color: #777;
+    margin: 0;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.pagination a {
+    text-decoration: none;
+    padding: 5px 10px;
+    margin: 0 5px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    color: #333;
+}
+
+.pagination a:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+
+.contact-form {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+.footer {
+    background-color: var(--third-color);
+    color: #fff;
+    text-align: center;
+    font-weight: var(--font-semi);
+    padding: 2rem 0;
+}
+
+.f_title {
+    font-size: 2rem;
+    margin-bottom: var(--mb-3);
+}
+
+.f_socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: var(--mb-2);
+}
+
+.f_icon {
+    font-size: 1.5rem;
+    color: #fff;
+    margin: 0 var(--mb-1);
+}
+
+@media screen and (max-width: 480px) {
+    .place {
+        width: 100%; /* Display one place per row on even smaller screens */
+    }
+    .carousel {
+    height: inherit; /* Match the height of the parent container */
+    }
+
+    .carousel-slide img {
+    width: 100%;
+    height: 100%; /* Occupy the full height of the carousel */
+    max-width: 100%;
+    object-fit: cover; /* Ensure the image covers the entire container */
+    }
+    .footer {
+        background-color: var(--third-color);
+        color: #fff;
+        text-align: center;
+        font-weight: var(--font-semi);
+        padding: 2rem 0;
+    }
+    
+}
+
+@media screen and (min-width: 768px) {
+body {
+    margin: 0;
+}
+.section {
+    padding-top: 4rem;
+    padding-bottom: 3rem;
+}
+.section-title {
+    margin-bottom: var(--mb-6);
+}
+.section-title::after {
+    width: 80px;
+    top: 3rem;
+}
+.nav {
+    height: calc(var(--header-height) + 1rem);
+}
+.item {
+    margin-left: var(--mb-6);
+}
+.list {
+    display: flex;
+    padding-top: 0;
+}
+.toggle {
+    display: none;
+}
+.link {
+    color: var(--second-color);
+}
+.home {
+    height: 100vh;
+}
+.home_data {
+    align-self: flex-end;
+}
+.carousel {
+    height: inherit; /* Match the height of the parent container */
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: calc(100vh - 3rem);; /* Occupy the full height of the carousel */
+    max-width: 100%;
+    object-fit: cover; /* Ensure the image covers the entire container */
+}
+/*.home_social {
+    padding-top: 0;
+    padding-bottom: 2.5rem;
+    flex-direction: row;
+    align-self: flex-end;
+}
+.home_social-icon {
+    margin-bottom: 0;
+    margin-right: var(--mb-4);
+}*/
+
+
+
+.work_container {
+    display: flex;
+    justify-items: center;
+    
+}
+.place{
+    box-sizing: border-box;
+    width: calc(33.33% - 20px); /* Default for multiple items */
+    margin: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+    min-width: 250px; /* Ensures a minimum width */
+}
+
+.place img {
+    max-width: 100%; /* Ensure images don't exceed their container */
+    height: auto; /* Maintain aspect ratio */
+}
+.pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+.pagination a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 20px; 
+    margin: 0 10px; 
+    border: 2px solid #333;
+    border-radius: 4px;
+    color: #333; 
+}
+
+.pagination a:hover {
+    background-color: #333;
+    color: #fff;
+}
+.contact_form {
+    width: 400px;
+}
+.contact_container {
+    justify-items: center;
+}
+}
+
+@media screen and (min-width: 1024px) {
+.bd_grid {
+    margin-left: auto;
+    margin-right: auto;
+}
+.carousel {
+    height: inherit; /* Match the height of the parent container */
+  }
+
+  .carousel-slide img {
+    width: 100%;
+    height: calc(100vh - 3rem); /* Occupy the full height of the carousel */
+    max-width: 100%;
+    object-fit: cover; /* Ensure the image covers the entire container */
+  }
+}

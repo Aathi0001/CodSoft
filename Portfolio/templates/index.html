@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aathi Siva Ganesh | Computer Science Engineering Student & Aspiring Software Developer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .flash-messages {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 9999;
+            display: none;
+        }
+        .alert-success {
+            color: green;
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+        }
+        .alert-error {
+            color: red;
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+    <!-- Main-->
+    <div class="main-container">
+        <div class="aside">
+            <div class="logo">
+                <a href="#"><span>M</span>enu</a>
+            </div>
+            <div class="nav-toggler">
+                <span></span>
+            </div>
+            <ul class="nav">
+                <li><a href="#home" class="active"><i class="fa fa-home"></i>Home</a></li>
+                <li><a href="#about"><i class="fa fa-user"></i>About</a></li>
+                <li><a href="#services"><i class="fa fa-list"></i>Services</a></li>
+                <li><a href="#work"><i class="fa fa-briefcase"></i>work</a></li>
+                <li><a href="#contact"><i class="fa fa-comments"></i>contact</a></li>
+
+            </ul>
+
+        </div>
+        <div class="main-content">
+            <!--Home-->
+            <section class="home active section" id="home">
+                <div class="container">
+                    <div class="row">
+                        <div class="home-info padd-15">
+                            <h3 class="hello">Hello, my name is <span class="name">Aathi Siva Ganesh</span></h3>
+                            <h3 class="my-profession">I' m a <span class="typing">Computer Science Student</span></h3>
+                            <p>Aspiring Computer Sciece Engineer with a solid foundation in software development and database management, committed to improving user experience and staying updated with the latest technologies.</p>
+                            <a href="#contact" data-section-index = "1" class="btn hire-me">Contact Me</a>
+                        </div>
+                        <div class="home-img padd-15">
+                            <img src="{{ url_for('static', filename='img/hero.png') }}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--About-->
+            <section class="about section" id="about">
+                <div class="container">
+                    <div class="row">
+                        <div class="section-title padd-15">
+                            <h2>About Me</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="about-content padd-15">
+                            <div class="row">
+                                <div class="about-text padd-15">
+                                    <h3>I'm Aathi Siva Ganesh and <span>Computer Science Student</span></h3>
+                                    <p>I'm a dedicated Computer Science Engineering student with a solid background in software development and database management. I have a strong focus on enhancing user experience and are committed to staying current with evolving technologies. My skill set includes a deep understanding of web technologies, networking, and machine learning, which you continuously develop through self-driven learning and practical application.</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="personal-info padd-15">
+                                    <div class="row">
+                                        <div class="info-item padd-15">
+                                            <p>Birthday : <span>13 Nov 2003</span></p>
+                                        </div>
+                                        <div class="info-item padd-15">
+                                            <p>Age : <span>20</span></p>
+                                        </div>
+                                        <div class="info-item padd-15">
+                                            <p>LinkedIn : <span><a href="https://www.linkedin.com/in/aathi-siva-ganesh-p-833654289/" target="_blank" style="text-decoration: none;">Connect on LinkedIn</a></span></p>
+                                        </div>
+                                        <div class="info-item padd-15">
+                                            <p>Email : <span><a href="mailto:p.aathisivaganesh@gmail.com" target="_blank" style="text-decoration: none;">p.aathisivaganesh@gmail.com</a></span></p>
+                                        </div>
+                                        <div class="info-item padd-15">
+                                            <p>Degree : <span>BE</span></p>
+                                        </div>
+                                        <div class="info-item padd-15">
+                                            <p>Phone : <span><a href="tel:+919150470830" target="_blank" style="text-decoration: none;">9150470830</a></span></p>
+                                        </div>
+                                        <div class="info-item padd-15">
+                                            <p>City : <span>Chennai</span></p>
+                                        </div>
+                                        <div class="info-item padd-15">
+                                            <p>Freelancer : <span>Available</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="buttons padd-15">
+                                            <a id="download-btn" href="{{ url_for('static', filename='img/CV.pdf') }}" class="btn" target="_blank">View CV</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="skills padd-15">
+                                    <div class="row">
+                                        <div class="skill-item padd-15">
+                                            <h5>HTML</h5>
+                                            <div class="progress">
+                                                <div class="progress-in" style="width: 90%;"></div>
+                                                <div class="skill-precent">90%</div>
+                                            </div>
+                                        </div>
+                                        <div class="skill-item padd-15">
+                                            <h5>CSS</h5>
+                                            <div class="progress">
+                                                <div class="progress-in" style="width: 70%;"></div>
+                                                <div class="skill-precent">70%</div>
+                                            </div>
+                                        </div>
+                                        <div class="skill-item padd-15">
+                                            <h5>JavaScript</h5>
+                                            <div class="progress">
+                                                <div class="progress-in" style="width: 60%;"></div>
+                                                <div class="skill-precent">60%</div>
+                                            </div>
+                                        </div>
+                                        <div class="skill-item padd-15">
+                                            <h5>Python</h5>
+                                            <div class="progress">
+                                                <div class="progress-in" style="width: 75%;"></div>
+                                                <div class="skill-precent">75%</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="education padd-15">
+                                    <h3 class="title">Education</h3>
+                                    <div class="row">
+                                        <div class="timeline-box padd-15">
+                                            <div class="timeline shadow-dark">
+                                                <div class="timeline-item">
+                                                    <div class="circle-dot"></div>
+                                                    <h3 class="timeline-date">
+                                                        <i class="fa fa-calendar"></i> 2021 - current
+                                                    </h3>
+                                                    <h4 class="timeline-title">Bachelor of Engineering: Computer Science and Engineering</h4>
+                                                    <p>Aalim Muhammed Salegh College of Engineering</p>
+                                                </div>
+                                                <div class="timeline-item">
+                                                    <div class="circle-dot"></div>
+                                                    <h3 class="timeline-date">
+                                                        <i class="fa fa-calendar"></i> 2020-2021
+                                                    </h3>
+                                                    <h4 class="timeline-title">Higher Secondary</h4>
+                                                    <p>Everwin Matriculation and Higher Secondary School</p>
+                                                </div>
+                                                <div class="timeline-item">
+                                                    <div class="circle-dot"></div>
+                                                    <h3 class="timeline-date">
+                                                        <i class="fa fa-calendar"></i> 2018-2019
+                                                    </h3>
+                                                    <h4 class="timeline-title">SSLC</h4>
+                                                    <p>Everwin Matriculation and Higher Secondary School</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="experience padd-15">
+                                    <h3 class="title">Experience</h3>
+                                    <div class="row">
+                                        <div class="timeline-box padd-15">
+                                            <div class="timeline shadow-dark">
+                                                <div class="timeline-item">
+                                                    <div class="circle-dot"></div>
+                                                    <h3 class="timeline-date">
+                                                        <i class="fa fa-clock"></i> 1 Year
+                                                    </h3>
+                                                    <h4 class="timeline-title">Freelance</h4>
+                                                    <p>Developed and maintained responsive websites using HTML, CSS, and JavaScript and implemented back-end functionality with Python and Java, integrating MySQL databases.</p>
+                                                </div>
+                                                <div class="timeline-item">
+                                                    <div class="circle-dot"></div>
+                                                    <h3 class="timeline-date">
+                                                        <i class="fa fa-clock"></i> 1 Months
+                                                    </h3>
+                                                    <h4 class="timeline-title">Personal Projects</h4>
+                                                    <p>Created a personal travel blog and a tech review website with dynamic content.</p>
+                                                </div>
+                                                <div class="timeline-item">
+                                                    <div class="circle-dot"></div>
+                                                    <h3 class="timeline-date">
+                                                        <i class="fa fa-clock"></i> 1 Month
+                                                    </h3>
+                                                    <h4 class="timeline-title">Computer Hardware Repair</h4>
+                                                    <p>Diagnosed and repaired hardware issues in personal computers.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--Service-->
+            <section class="service section" id="services">
+                <div class="container">
+                    <div class="row">
+                        <div class="section-title padd-15">
+                            <h2>Services</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="service-item padd-15">
+                            <div class="service-item-inner">
+                                <div class="icon">
+                                    <i class="fa fa-laptop-code"></i>
+                                </div>
+                                <h4>Web Development</h4>
+                                <p>Create responsive, user-friendly websites with HTML, CSS, and JavaScript, and manage back-end functionality using Python or Java, integrated with MySQL databases.</p>
+                            </div>
+                        </div>
+                        <div class="service-item padd-15">
+                            <div class="service-item-inner">
+                                <div class="icon">
+                                    <i class="fa fa-gear"></i>
+                                </div>
+                                <h4>Technical Support and Hardware Repair</h4>
+                                <p>Provide computer hardware repair services, diagnosing and fixing issues, and offer remote or on-site technical support for software and hardware.</p>
+                            </div>
+                        </div>
+                        <div class="service-item padd-15">
+                            <div class="service-item-inner">
+                                <div class="icon">
+                                    <i class="fa fa-mobile-alt"></i>
+                                </div>
+                                <h4>Mobile Web Optimization</h4>
+                                <p>Optimize websites for mobile devices, ensuring fast loading times, responsive design, and seamless user experience on smartphones and tablets.</p>
+                            </div>
+                        </div>
+                        <div class="service-item padd-15">
+                            <div class="service-item-inner">
+                                <div class="icon">
+                                    <i class="fa fa-microchip"></i>
+                                </div>
+                                <h4>Machine Learning and AI</h4>
+                                <p>Build and train machine learning models for predictive analytics, and analyze data to extract insights and create visualizations.</p>
+                            </div>
+                        </div>
+                        <div class="service-item padd-15">
+                            <div class="service-item-inner">
+                                <div class="icon">
+                                    <i class="fa fa-code"></i>
+                                </div>
+                                <h4>Programming and Software Development</h4>
+                                <p>Develop custom software solutions in languages like C, C++, Java, and Python, and offer debugging, optimization, and code refactoring services.</p>
+                            </div>
+                        </div>
+                        <div class="service-item padd-15">
+                            <div class="service-item-inner">
+                                <div class="icon">
+                                    <i class="fa fa-database"></i>
+                                </div>
+                                <h4>Database Management</h4>
+                                <p>Design, implement, and manage MySQL databases, ensuring data integrity, security, and optimized performance for applications.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--Portfolio-->
+            <section class="portfolio section" id="work">
+                <div class="container">
+                    <div class="row">
+                        <div class="section-title padd-15">
+                            <h2>Work</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="portfolio-heading padd-15">
+                            <h2>My Projects :</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="portfolio-item padd-15">
+                            <div class="portfolio-item-inner shadow-dark">
+                                <div class="portfolio-img">
+                                    <a href="https://techreview.pythonanywhere.com/" target="_blank">
+                                        <img src="{{ url_for('static', filename='img/project/1.jpg') }}" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-item padd-15">
+                            <div class="portfolio-item-inner shadow-dark">
+                                <div class="portfolio-img">
+                                    <a href="https://aathi-portfolio.s3.ams03.cloud-object-storage.appdomain.cloud/Project/Index.html" target="_blank">
+                                        <img src="{{ url_for('static', filename='img/project/2.jpg') }}" ssalt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-item padd-15">
+                            <div class="portfolio-item-inner shadow-dark">
+                                <div class="portfolio-img">
+                                    <a href="https://aathisivaganesh.pythonanywhere.com/" target="_blank">
+                                        <img src="{{ url_for('static', filename='img/project/3.jpg') }}" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="contact section" id="contact">
+                <div class="container">
+                    <div class="row">
+                        <div class="section-title padd-15">
+                            <h2>Contact Me</h2>
+                        </div>
+                    </div>
+                    <h3 class="contact-title padd-15">Have Any Questions</h3>
+                    <h4 class="contact-sub-title padd-15">Every conversation is an opportunity to connect</h4>
+                    <div class="row">
+                        <div class="contact-info-item">
+                            <div class="icon"><i class="fa fa-map-marker-alt"></i></div>
+                            <h4>Location</h4>
+                            <p>Tamil Nadu, India</p>
+                        </div>
+                        <div class="contact-info-item padd-15">
+                            <div class="icon"><i class="fa fa-phone"></i></div>
+                            <h4>Call Me On</h4>
+                            <p><a href="tel:+919150470830" target="_blank" style="text-decoration: none;">+91 9150470830</a></p>
+                        </div>
+                        <div class="contact-info-item padd-15">
+                            <div class="icon"><i class="fa fa-envelope"></i></div>
+                            <h4>Email</h4>
+                            <p><a href="mailto:p.aathisivaganesh@gmail.com" target="_blank" style="text-decoration: none;">p.aathisivaganesh@gmail.com</a></p>
+                        </div>
+                        <div class="contact-info-item padd-15">
+                            <div class="icon"><i class="fa fa-link"></i></div>
+                            <h4>LinkedIn</h4>
+                            <p><a href="https://www.linkedin.com/in/aathi-siva-ganesh-p-833654289/" target="_blank" style="text-decoration: none;">Connect on LinkedIn</a></p>
+                        </div>
+                    </div>
+                    <h3 class="contact-title padd-15">SEND ME MESSAGE</h3>
+                    <h4 class="contact-sub-title padd-15">I'M RESPOSIVE TO MESSAGE</h4>
+                    <div class="row">
+                        <div class="contact-form padd-15">
+                            <form action="{{ url_for('submit_contact_form') }}" method="POST">
+                                <div class="row">
+                                    <div class="form-item col-12 padd-15">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="name" placeholder="Name" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-item col-12 padd-15">
+                                        <div class="form-group">
+                                            <input type="email" class="form-control" name="email" placeholder="Email" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-item col-12 padd-15">
+                                        <div class="form-group">
+                                            <textarea name="message" class="form-control" id="" placeholder="Message" required></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-item col-12 padd-15">
+                                        <div class="form-group">
+                                            <button type="submit" class="btn">Send Message</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <div id="formResponse" style="display: none;"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+            <!-- Flash message container -->
+            <div class="flash-messages">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                            <div class="alert alert-{{ category }}">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            </div>
+
+        </div>
+    </div>
+    <!--Switcher-->
+    <div class="style-switcher">
+        <div class="day-night s-icon">
+            <i class="fas fa-moon"></i>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+    <!-- Include Bootstrap JavaScript or your own scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Show the flash messages if there are any
+            if (document.querySelector('.flash-messages .alert')) {
+                const flashMessages = document.querySelector('.flash-messages');
+                flashMessages.style.display = 'block';
+                setTimeout(function() {
+                    flashMessages.style.opacity = '0';
+                    setTimeout(function() {
+                        flashMessages.style.display = 'none';
+                        flashMessages.style.opacity = '1';
+                    }, 500);
+                }, 5000); // Adjust duration as needed
+            }
+        });
+    </script>
+</body>
+</html>

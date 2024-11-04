@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <!--Home Section-->
+    <section class="home bg_grid" id="home">
+        <div class="carousel">
+            <div class="carousel-slide">
+              <img src="{{ url_for('static', filename='assets/Img/home1.jpg') }}" alt="Image 1">
+            </div>
+            <div class="carousel-slide">
+              <img src="{{ url_for('static', filename='assets/Img/home2.jpg') }}" alt="Image 2">
+            </div>
+            <div class="carousel-slide">
+              <img src="{{ url_for('static', filename='assets/Img/home3.jpg') }}" alt="Image 3">
+            </div>
+        </div>
+            <div class="home_data" data-aos="fade-down">
+                <h1 class="home_title"><br><br><br>CODE EXPLORER<br><span class="home_title_color">Coding Is A Journey</span></h1>
+                <br>
+                <a href="#work" class="button">Discover</a>
+                <!--<div class="home_social">
+                    <a href="#" class="home_social-icon" data-aos="fade-down" data-aos-delay="200">
+                        <img src="{{ url_for('static', filename='assets/Img/facebook.png') }}" alt="facebook">
+                    </a>
+                    <a href="#" class="home_social-icon" data-aos="fade-down" data-aos-delay="250">
+                        <img src="{{ url_for('static', filename='assets/Img/instagram.png') }}" alt="instagram">
+                    </a>
+                    <a href="#" class="home_social-icon" data-aos="fade-down" data-aos-delay="300">
+                        <img src="{{ url_for('static', filename='assets/Img/twitter.png') }}" alt="twitter">
+                    </a>
+                    <a href="#" class="home_social-icon" data-aos="fade-down" data-aos-delay="350">
+                        <img src="{{ url_for('static', filename='assets/Img/github.png') }}" alt="github">
+                    </a>
+                </div>-->
+                
+            </div>
+    </section>
+
+    <!-- Work Section -->
+    <section class="work section" id="work">
+        <h2 class="section-title" data-aos="fade-down">Explore</h2>
+            <div class="work_container bd_grid" data-aos="fade-down" data-aos-delay="250">
+                    <div class="places">
+                        
+                        {% for place in places %}
+                        <div class="place">
+                            <a href="{{ url_for('show_place', place_id=place.id) }}" target="_blank">
+                                <img src="{{ url_for('get_image', image_id=place.id) }}" alt="{{ place.name }}">
+                            </a>
+                            <br>
+                            <a href="{{ url_for('show_place', place_id=place.id) }}" target="_blank">
+                                <h1>{{ place.name }}</h1>
+                            </a>    
+                            
+                        </div>
+                        {% endfor %}
+                    </div>
+            </div>     
+                    <div class="pagination">
+                        {% if prev_page %}
+                        <a href="{{ url_for('work', page=prev_page) }}">Previous</a>
+                        {% endif %}
+                        {% for page_num in page_nums %}
+                        <a href="{{ url_for('work', page=page_num) }}">{{ page_num }}</a>
+                        {% endfor %}
+                        {% if next_page %}
+                        <a href="{{ url_for('work', page=next_page) }}">Next</a>
+                        {% endif %}
+                    </div>
+    </section>
+ <!-- Contact Section -->    
+        
+ <section class="contact-form" id="contact">
+    <h2>Send us a message</h2>
+    <div class="contact_container bd_grid"></div>
+    <form action="/submit_message" method="post">
+        <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+        </div>
+        <div class="form-group">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</div>
+</section>
+{% endblock %}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A guide to programming languages">
+    <title>Code_Explore</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/Style.css') }}">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav bg_grid">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='assets/Img/logo.png') }}" alt="Logo">
+            </div>
+            <div class="menu" id="menu">               
+                <ul class="list">
+                    <li class="item">
+                        <a href="#home" class="link active">Home</a>
+                    </li>
+                    <li class="item">
+                        <a href="#work" class="link active">Explore</a>
+                    </li>
+                    <li class="item">
+                        <a href="#contact" class="link active">Feedback</a>
+                    </li>
+                </ul>
+            </div>        
+            <div class="toggle" id="toggle" aria-label="Toggle Menu">
+                <img src="{{ url_for('static', filename='assets/Img/Menu.png') }}" alt="Menu">
+            </div>
+        </nav>
+    </header>
+    <main class="main">
+        {% block content %}{% endblock %}
+    </main>
+    <footer class="footer">
+        <p class="f_title">Tech view</p>
+        <div class="f_socials">
+            <a href="#" class="f_icon">
+                <img src="{{ url_for('static', filename='assets/Img/facebook.png') }}" alt="Facebook">
+            </a>
+            <a href="#" class="f_icon">
+                <img src="{{ url_for('static', filename='assets/Img/instagram.png') }}" alt="Instagram">
+            </a>
+            <a href="#" class="f_icon">
+                <img src="{{ url_for('static', filename='assets/Img/twitter.png') }}" alt="Twitter">
+            </a>
+            <a href="#" class="f_icon">
+                <img src="{{ url_for('static', filename='assets/Img/github.png') }}" alt="GitHub">
+            </a>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="{{ url_for('static', filename='assets/main.js') }}"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: false,
+        });
+    </script>   
+</body>
+</html>

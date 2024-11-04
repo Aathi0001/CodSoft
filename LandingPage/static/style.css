@@ -1,0 +1,184 @@
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Define some basic styling */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.home_social {
+  transform: unset;
+  bottom: 0;
+  width: 100%;
+  flex-direction: row;
+  box-shadow: 4px 0 8px rgba(0, 0, 0, 0.3);
+  padding: 16px 0;
+  justify-content: center;
+}
+
+.home_social-icon {
+  margin: 0 16px;
+}
+
+.home_social-icon a {
+  margin: 12px 0;
+  transition: transform 0.3s ease;
+}
+
+.home_social-icon img:hover {
+  transform: scale(1.1);
+}
+
+/* Style the main content container */
+.content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin: 20px 0;
+}
+
+#title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.main-content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.75;
+  color: #333;
+}
+
+/* Style the comment container */
+.comment-container {
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-top: 20px;
+  position: relative; /* Add relative positioning for absolute positioning of button */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.comment-container h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+#commentInput {
+  width: calc(100% - 80px); /* Adjusted for spacing with button */
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.send {
+  background-color: #8400ff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.send:hover {
+  background-color: #6200ea;
+}
+
+/* Style for the Show Comments button */
+.toggle-comments {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px; /* Space between comment box and show button */
+  display: block;
+  margin-right: auto; /* Align button to the right */
+  margin-left: 0; /* Align button to the right */
+}
+
+.toggle-comments:hover {
+  background-color: #0056b3;
+}
+
+#comments {
+  margin-top: 20px;
+  display: none; /* Start with comments hidden */
+}
+
+#comments ul {
+  list-style-type: none;
+}
+
+#comments li {
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles for smaller screens (max-width: 768px) */
+@media screen and (max-width: 768px) {
+  .home_social {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 10px;
+  }
+  
+  .home_social-icon {
+    margin: 0;
+  }
+  
+  .home_social-icon img {
+    max-width: 24px;
+  }
+
+  .comment-container {
+    padding: 10px;
+  }
+
+  #commentInput {
+    margin-bottom: 10px;
+  }
+}
+
+/* Style for larger screens (e.g., desktop) */
+@media screen and (min-width: 769px) {
+  /* Add any specific styles for larger screens here */
+}
